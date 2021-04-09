@@ -1,0 +1,37 @@
+{
+  "name": "helpers",
+  "version": "1.0.0",
+  "main": "dist/helpers.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./": "./dist/"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@rollup/plugin-replace": "^2.4.2",
+    "better-docs": "^2.3.2",
+    "jsdoc": "^3.6.6",
+    "rollup": "^2.44.0",
+    "rollup-plugin-cleaner": "^1.0.0"
+  },
+  "peerDependencies": {},
+  "sideEffects": false,
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build",
+    "docs": "jsdoc -c jsdoc.conf.json",
+    "postinstall": "node ./post-install.js"
+  }
+}
